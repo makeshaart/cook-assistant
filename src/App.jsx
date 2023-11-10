@@ -19,18 +19,19 @@ const App = () => {
         model: 'gpt-3.5-turbo',
         messages: [{ role: "user", content: `Please create best recipe with ${ingredients}  in JSON format in which the title, ingredients, recept, timeToCook field will be a string` }],
       });
-      console.log(response, "RESPONSE");
 
       const recipeData = response.choices[0].message.content;
 
       const imageKey = JSON.parse(response.choices[0].message.content)?.title
       const imageResult = await openai.images.generate({
         prompt: imageKey,
-        size: "256x256",
+        size: "200x200",
         n: 1,
       })
+      
       setImage(imageResult[0].url)
       setRecipe(JSON.parse(recipeData))
+      setIngredients('')
     } catch (error) {
       console.error('Error:', error);
     }

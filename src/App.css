@@ -5,7 +5,9 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  color: gray;
 }
+
 body{
   background-color: rgb(181, 179, 179);
 }
@@ -26,7 +28,10 @@ textarea{
   border-radius: 5px;
 }
 
-textarea,.input_conteiner button{
+textarea, .input_conteiner button{
   background: rgb(229, 228, 228) ;
   background-color: rgb(229, 228, 228);
+  color: gray;
+  border: solid 0,5px gray;
 }
+
