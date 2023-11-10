@@ -50,7 +50,9 @@ const App = () => {
         <button onClick={handleGenerateRecipe}>Create a recipe</button>
       </div>
 
+      <div>
       {image && image}
+      </div>
       {recipe && (
         <div className='text_content'>
           <h2>{recipe.title}</h2>
