@@ -1,0 +1,32 @@
+#root {
+  display: flex;
+  align-content: center;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+body{
+  background-color: rgb(181, 179, 179);
+}
+
+.conteiner{
+  max-width: 1600px;
+  margin: auto;
+}
+
+.input_conteiner{
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: auto;
+}
+textarea{
+  min-height: 100px ;
+  border-radius: 5px;
+}
+
+textarea,.input_conteiner button{
+  background: rgb(229, 228, 228) ;
+  background-color: rgb(229, 228, 228);
+}
