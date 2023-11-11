@@ -13,6 +13,10 @@ body{
   background-color: rgb(181, 179, 179);
 }
 
+.loader{
+  color: red;
+}
+
 .conteiner{
   max-width: 1600px;
   margin: auto;
@@ -27,6 +31,9 @@ body{
 textarea{
   min-height: 100px ;
   border-radius: 5px;
+  resize: none;
+  outline: gray;
+  margin: 5px 0;
 }
 
 textarea, .input_conteiner button{

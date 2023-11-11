@@ -6,9 +6,11 @@ const App = () => {
   const [ingredients, setIngredients] = useState('');
   const [recipe, setRecipe] = useState(null);
   const [image, setImage] = useState(null);
+  const [loading, setLoading] = useState(false);
 
 
   const handleGenerateRecipe = async () => {
+    setLoading(true);
     const openai = new OpenAI({
       apiKey: "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",
       organization: "org-oJqA3X89TZTCik3UCUQadzTQ",
@@ -28,12 +30,14 @@ const App = () => {
         size: "200x200",
         n: 1,
       })
-      
+
       setImage(imageResult[0].url)
       setRecipe(JSON.parse(recipeData))
       setIngredients('')
     } catch (error) {
       console.error('Error:', error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -49,9 +53,11 @@ const App = () => {
         />
         <button onClick={handleGenerateRecipe}>Create a recipe</button>
       </div>
+      
+      {loading && <div className='loader'>Loading...</div>}
 
       <div>
-      {image && image}
+        {image && image}
       </div>
       {recipe && (
         <div className='text_content'>
